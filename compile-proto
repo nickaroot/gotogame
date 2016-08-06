@@ -2,13 +2,25 @@
 
 lang="$1"
 
-out_dir="build/${lang}"
+tmp_path="/tmp/com.b1nary.protobuf.bootstrap"
+out_dir="proto/${lang}"
+tmp_dir="${tmp_path}/${out_dir}"
+
+if [ -e "${tmp_path}" ]; then
+	rm -rf "${tmp_path}"
+fi
 
 if [ -e "${out_dir}" ]; then
 	rm -rf "${out_dir}"
 fi
 
-cp -r "proto/" "${out_dir}/" &&
+mkdir -p "${tmp_dir}"
+rmdir "${tmp_dir}"
+
+cp -r "proto/" "${tmp_dir}/" &&
+mv "${tmp_dir}/" "${out_dir}/" &&
 
 cd "${out_dir}" &&
 protoc "--${lang}_out=." *.proto */*.proto
+
+rm -rf "${tmp_path}"
