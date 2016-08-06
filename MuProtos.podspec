@@ -43,14 +43,13 @@ Pod::Spec.new do |s|
         --grpc_out=#{dir} \
         -I #{src} \
         -I #{protoc_dir} \
-        #{src}/*.proto \
-        #{src}/*/*.proto
+        #{src}/*.proto #{src}/**/*.proto
   CMD
 
   # The --objc_out plugin generates a pair of .pbobjc.h/.pbobjc.m files for each
   # .proto file.
   s.subspec 'Messages' do |ms|
-    ms.source_files = "#{dir}/*.pbobjc.{h,m}"
+    ms.source_files = "#{dir}/*.pbobjc.{h,m}", "#{dir}/**/*.pbobjc.{h,m}"
     ms.header_mappings_dir = dir
     ms.requires_arc = false
     # The generated files depend on the protobuf runtime.
@@ -66,7 +65,7 @@ GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
   # each .proto file with
   # a service defined.
   s.subspec 'Services' do |ss|
-    ss.source_files = "#{dir}/*.pbrpc.{h,m}"
+    ss.source_files = "#{dir}/*.pbrpc.{h,m}", "#{dir}/**/*.pbrpc.{h,m}"
     ss.header_mappings_dir = dir
     ss.requires_arc = true
     # The generated files depend on the gRPC runtime, and on the files generated
