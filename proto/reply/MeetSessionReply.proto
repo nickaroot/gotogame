@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package mu;
+
+message MeetSessionReply {
+	bool status = 1;
+	string initiator_u_id = 2;
+}
+
+// vim: noet:ts=2

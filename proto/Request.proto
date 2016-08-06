@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package mu;
+
+import "MessageType.proto";
+
+message Request {
+	mu.MessageType type = 1;
+	bytes body = 2;
+	string token = 3;
+}
+
+// vim: noet:ts=2

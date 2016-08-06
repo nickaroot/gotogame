@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.AUTH_TOKEN
+
+message AuthTokenReply {
+	string token = 1;
+}
+
+// vim: noet:ts=2

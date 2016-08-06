@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package mu;
+
+enum MessageType {
+	// Error
+	ERROR           = 0;
+	// Auth token request&reply
+	AUTH_TOKEN      = 1;
+	// User profile request&reply
+	USER_PROFILE    = 2;
+	// Location update request&reply
+	LOCATION_UPDATE = 3;
+	// Meet user request&reply
+	USER_MEET       = 4;
+	// Meet session info request&reply
+	MEET_SESSION    = 5;
+}
+
+// vim: noet:ts=2

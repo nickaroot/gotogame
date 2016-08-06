@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.AUTH_TOKEN
+
+message AuthTokenRequest {
+	string login = 1;
+	string pass = 2;
+}
+
+// vim: noet:ts=2

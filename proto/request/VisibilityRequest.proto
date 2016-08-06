@@ -1,0 +1,9 @@
+syntax="proto3";
+
+package mu;
+
+message VisibilityRequest {
+	bool invalidate_last_location = 1;
+}
+
+// vim: noet:ts=2

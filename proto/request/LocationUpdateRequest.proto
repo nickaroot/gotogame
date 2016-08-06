@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.LOCATION_UPDATE
+
+message LocationUpdateRequest {
+	// Latitude
+	double lat = 2;
+	// Longitude
+	double lon = 3;
+}
+
+// vim: noet:ts=2

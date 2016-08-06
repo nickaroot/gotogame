@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.PROFILE
+
+message ProfileRequest {
+	// User ID.
+	string u_id= 1;
+}
+
+// vim: noet:ts=2

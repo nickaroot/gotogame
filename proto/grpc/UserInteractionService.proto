@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package mu;
+
+import "reply/VisibilityReply.proto";
+import "request/VisibilityRequest.proto";
+
+import "reply/MeetUserReply.proto";
+import "request/MeetUserRequest.proto";
+
+import "reply/MeetSessionReply.proto";
+import "request/MeetSessionRequest.proto";
+
+service UserInteractionService {
+	rpc SetVisibility(mu.VisibilityRequest) returns (mu.VisibilityReply);
+	rpc MeetUser(mu.MeetUserRequest) returns (mu.MeetUserReply);
+	rpc GetMeetSession(mu.MeetSessionRequest) returns (mu.MeetSessionReply);
+}

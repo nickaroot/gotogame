@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.USER_PROFILE
+
+import "model/UserProfile.proto";
+
+message UserProfileReply {
+	mu.UserProfile profile = 1;
+}
+
+// vim: noet:ts=2

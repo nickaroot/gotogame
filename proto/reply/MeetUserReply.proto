@@ -1,0 +1,9 @@
+syntax="proto3";
+
+package mu;
+
+message MeetUserReply {
+	string meet_session_id = 1;
+}
+
+// vim: noet:ts=2

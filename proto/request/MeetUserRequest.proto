@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.USER_MEET
+
+message MeetUserRequest {
+	string target_u_id = 1;
+}
+
+// vim: noet:ts=2

@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package mu;
+
+// MessageType.MEET_SESSION
+
+message MeetSessionRequest {
+	string meet_session_id = 1;
+}
+
+// vim: noet:ts=2
