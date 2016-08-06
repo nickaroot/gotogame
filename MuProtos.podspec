@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   # Pods directory corresponding to this app's Podfile, relative to the location
   # of this podspec.
-  pods_root = '<path to your Podfile>/Pods'
+  pods_root = '~/Documents/MU/Pods'
 
   # Path where Cocoapods downloads protoc and the gRPC plugin.
   protoc_dir = "#{pods_root}/!ProtoCompiler"
