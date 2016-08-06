@@ -1,7 +1,14 @@
 #!/bin/sh
 
-lang=$1
+lang="$1"
 
-cp -r "proto/" "${lang}/" &&
-cd "${lang}" &&
+out_dir="build/${lang}"
+
+if [ -e "${out_dir}" ]; then
+	rm -rf "${out_dir}"
+fi
+
+cp -r "proto/" "${out_dir}/" &&
+
+cd "${out_dir}" &&
 protoc "--${lang}_out=." *.proto */*.proto
