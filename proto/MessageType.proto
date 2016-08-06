@@ -4,17 +4,17 @@ package mu;
 
 enum MessageType {
 	// Error
-	ERROR           = 0;
-	// Auth token request&reply
-	AUTH_TOKEN      = 1;
-	// User profile request&reply
-	USER_PROFILE    = 2;
-	// Location update request&reply
-	LOCATION_UPDATE = 3;
-	// Meet user request&reply
-	USER_MEET       = 4;
-	// Meet session info request&reply
-	MEET_SESSION    = 5;
+	ERROR           = 0; // reply
+	// Auth token
+	AUTH_TOKEN      = 1; // request&reply
+	// User profile
+	USER_PROFILE    = 2; // request&reply
+	// Location update
+	LOCATION_UPDATE = 3; // request&reply
+	// Meet user
+	USER_MEET       = 4; // request&reply
+	// Meet session info
+	MEET_SESSION    = 5; // request&reply
 }
 
 // vim: noet:ts=2

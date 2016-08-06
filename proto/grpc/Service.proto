@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package mu;
+
+import "Request.proto";
+import "Reply.proto";
+
+service Service {
+	rpc SendRequest(mu.Request) returns (mu.Reply);
+}
+
+// vim: noet:ts=2
