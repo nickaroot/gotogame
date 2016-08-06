@@ -6,3 +6,5 @@ enum MapElementType {
 	UNKNOWN = 0;
 	USER = 1;
 }
+
+// vim: noet:ts=2

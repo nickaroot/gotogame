@@ -2,19 +2,14 @@ syntax="proto3";
 
 package mu;
 
-// User profile + last location,
-// sent as response in LocationUpdateReply
+// Sent as response in LocationUpdateReply
 
-import "model/MapElementType.proto";
+import "model/Coordinate.proto";
+import "model/MapObject.proto";
 
 message MapElement {
-	// Location
-	double lat = 1;
-	double lon = 2;
-
-	// Map element
-	mu.MapElementType type = 3;
-	bytes body = 4;
+	mu.Coordinate location = 1;
+	mu.MapObject object = 2;
 }
 
 // vim: noet:ts=2

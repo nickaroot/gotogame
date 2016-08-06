@@ -1,0 +1,7 @@
+#!/bin/sh
+
+lang=$1
+
+cp -r "proto/" "${lang}/" &&
+cd "${lang}" &&
+protoc "--${lang}_out=." *.proto */*.proto

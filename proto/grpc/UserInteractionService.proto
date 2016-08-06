@@ -16,3 +16,5 @@ service UserInteractionService {
 	rpc MeetUser(mu.MeetUserRequest) returns (mu.MeetUserReply);
 	rpc GetMeetSession(mu.MeetSessionRequest) returns (mu.MeetSessionReply);
 }
+
+// vim: noet:ts=2

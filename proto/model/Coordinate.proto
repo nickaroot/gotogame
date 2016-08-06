@@ -2,9 +2,7 @@ syntax="proto3";
 
 package mu;
 
-// MessageType.LOCATION_UPDATE
-
-message LocationUpdateRequest {
+message Coordinate {
 	double lat = 1;
 	double lon = 2;
 }
