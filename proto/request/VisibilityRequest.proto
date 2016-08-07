@@ -3,7 +3,8 @@ syntax="proto3";
 package mu;
 
 message VisibilityRequest {
-	bool invalidate_location = 1;
+	string token = 1;
+	bool invalidate_location = 2;
 }
 
 // vim: noet:ts=2

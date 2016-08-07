@@ -5,7 +5,8 @@ package mu;
 // MessageType.MEET_SESSION
 
 message MeetSessionRequest {
-	string meet_session_id = 1;
+	string token = 1;
+	string meet_session_id = 2;
 }
 
 // vim: noet:ts=2

@@ -5,7 +5,8 @@ package mu;
 // MessageType.USER_MEET
 
 message MeetUserRequest {
-	string target_u_id = 1;
+	string token = 1;
+	string target_u_id = 2;
 }
 
 // vim: noet:ts=2

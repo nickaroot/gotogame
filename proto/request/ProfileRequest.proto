@@ -5,8 +5,8 @@ package mu;
 // MessageType.PROFILE
 
 message ProfileRequest {
-	// User ID.
-	string u_id= 1;
+	string token = 1;
+	string u_id= 2;
 }
 
 // vim: noet:ts=2

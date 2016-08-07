@@ -21,6 +21,11 @@ cp -r "proto/" "${tmp_dir}/" &&
 mv "${tmp_dir}/" "${out_dir}/" &&
 
 cd "${out_dir}" &&
-protoc "--${lang}_out=." *.proto */*.proto
+if [ "$lang" = "go" ]; then
+	protoc "--${lang}_out=plugins=grpc:." */*.proto
+else
+	protoc "--${lang}_out=." */*.proto
+fi
+
 
 rm -rf "${tmp_path}"

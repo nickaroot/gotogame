@@ -6,7 +6,7 @@ package mu;
 
 import "model/UserProfile.proto";
 
-message UserProfileReply {
+message ProfileReply {
 	mu.UserProfile profile = 1;
 }
 

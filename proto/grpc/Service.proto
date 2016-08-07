@@ -2,11 +2,50 @@ syntax="proto3";
 
 package mu;
 
-import "Request.proto";
-import "Reply.proto";
+// Auth
+import "request/AuthTokenRequest.proto";
+import "reply/AuthTokenReply.proto";
 
-service Service {
-	rpc SendRequest(mu.Request) returns (mu.Reply);
+// Profile
+import "request/ProfileRequest.proto";
+import "reply/ProfileReply.proto";
+
+// Update location
+import "request/LocationUpdateRequest.proto";
+import "model/MapElement.proto";
+
+// Visibility
+import "request/VisibilityRequest.proto";
+import "reply/VisibilityReply.proto";
+
+// Meet session
+import "request/MeetSessionRequest.proto";
+import "reply/MeetSessionReply.proto";
+
+// User meet
+import "request/MeetUserRequest.proto";
+import "reply/MeetUserReply.proto";
+
+service AuthService {
+	// Authorize
+	rpc Authorize(mu.AuthTokenRequest) returns (mu.AuthTokenReply);
+}
+
+service MuService {
+	// Profile
+	rpc GetProfile(mu.ProfileRequest) returns (mu.ProfileReply);
+
+	// Update location
+	rpc UpdateLocation(mu.LocationUpdateRequest) returns (stream mu.MapElement);
+
+	// Visibility options
+	rpc SetVisibility(mu.VisibilityRequest) returns (mu.VisibilityReply);
+
+	// Meet session status
+	rpc GetMeetSession(mu.MeetSessionRequest) returns (mu.MeetSessionReply);
+
+	// Meet user
+	rpc MeetUser(mu.MeetUserRequest) returns (mu.MeetUserReply);
 }
 
 // vim: noet:ts=2

@@ -5,8 +5,9 @@ package mu;
 // MessageType.LOCATION_UPDATE
 
 message LocationUpdateRequest {
-	double lat = 1;
-	double lon = 2;
+	string token = 1;
+	double lat = 2;
+	double lon = 3;
 }
 
 // vim: noet:ts=2
