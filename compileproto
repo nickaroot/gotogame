@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# Usage:
+# 	compileproto <lang> [rewrite]
+#
+
+yell() {
+	echo "[compileproto]: $@" 1>&2
+}
+
+die() {
+	code="$1"
+	msg="$2"
+	[ -z "$msg" ] && yell "$msg"
+	exit "$code"
+}
+
+try() {
+	eval "$@" || die 127 "cannot $*"
+}
+
+lang="$1"
+keyword="$2"
+
+out_lbl="mu${lang}proto"
+out_dir="${PWD}/${out_lbl}"
+tmp_dir=`mktemp -d`
+
+if [ -e "${out_dir}" ]; then
+	if [ "${keyword}" = "rewrite" ]; then
+		try rm -r "${out_dir}"
+	else
+		yell "${out_dir} already exists"
+		exit 2
+	fi
+fi
+
+# Setup build env
+try cp -r "proto/*" "${tmp_dir}/"
+try cd "${tmp_dir}"
+
+# protoc lang out param
+PARAM_OUT="--${lang}_out=."
+
+if [ "$lang" = "go" ]; then
+	PARAM_OUT="--${lang}_out=plugins=grpc:."
+fi
+
+# Compile
+try protoc $PARAM_OUT *.proto
+
+# Copy compiled source texts to out dir 
+try cp -r "${tmp_dir}/" "${out_dir}/"
+try cd "${out_dir}/"
+
+# Clean up installation
+try rm -rf "${tmp_dir}"
+
+# Done
+exit 0
+
+# vim: noet:ts=2
