@@ -2,15 +2,12 @@ syntax="proto3";
 
 package mu;
 
-// User profile,
-// sent as response in ProfileReply
-
 message UserProfile {
 	// User info
-	string identifier   = 1;
-	string displayName  = 2;
-	string profileImage = 3;
-	uint32 reg_date     = 4;
+	int64  identifier   = 1;
+	string lastName     = 2;
+	string firstName    = 3;
+	string profileImage = 4;
 
 	// User stat
 	uint64 users_met = 256;
