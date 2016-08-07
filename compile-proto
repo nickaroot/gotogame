@@ -22,9 +22,9 @@ mv "${tmp_dir}/" "${out_dir}/" &&
 
 cd "${out_dir}" &&
 if [ "$lang" = "go" ]; then
-	protoc "--${lang}_out=plugins=grpc:." */*.proto
+	protoc "--${lang}_out=plugins=grpc:." *.proto
 else
-	protoc "--${lang}_out=." */*.proto
+	protoc "--${lang}_out=." *.proto
 fi
 
 

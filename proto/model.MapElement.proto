@@ -4,8 +4,8 @@ package mu;
 
 // Sent as response in LocationUpdateReply
 
-import "model/Coordinate.proto";
-import "model/UserProfile.proto";
+import "model.Coordinate.proto";
+import "model.UserProfile.proto";
 
 message MapElement {
 	mu.Coordinate location = 1;

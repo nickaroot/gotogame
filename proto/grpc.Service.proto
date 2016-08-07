@@ -3,28 +3,28 @@ syntax="proto3";
 package mu;
 
 // Auth
-import "request/AuthTokenRequest.proto";
-import "reply/AuthTokenReply.proto";
+import "request.AuthTokenRequest.proto";
+import "reply.AuthTokenReply.proto";
 
 // Profile
-import "request/ProfileRequest.proto";
-import "reply/ProfileReply.proto";
+import "request.ProfileRequest.proto";
+import "model.UserProfile.proto";
 
 // Update location
-import "request/LocationUpdateRequest.proto";
-import "model/MapElement.proto";
+import "request.LocationUpdateRequest.proto";
+import "model.MapElement.proto";
 
 // Visibility
-import "request/VisibilityRequest.proto";
-import "reply/VisibilityReply.proto";
+import "request.VisibilityRequest.proto";
+import "reply.VisibilityReply.proto";
 
 // Meet session
-import "request/MeetSessionRequest.proto";
-import "reply/MeetSessionReply.proto";
+import "request.MeetSessionRequest.proto";
+import "reply.MeetSessionReply.proto";
 
 // User meet
-import "request/MeetUserRequest.proto";
-import "reply/MeetUserReply.proto";
+import "request.MeetUserRequest.proto";
+import "reply.MeetUserReply.proto";
 
 service AuthService {
 	// Authorize
@@ -33,7 +33,7 @@ service AuthService {
 
 service MuService {
 	// Profile
-	rpc GetProfile(mu.ProfileRequest) returns (mu.ProfileReply);
+	rpc GetProfile(mu.ProfileRequest) returns (mu.UserProfile);
 
 	// Update location
 	rpc UpdateLocation(mu.LocationUpdateRequest) returns (stream mu.MapElement);
