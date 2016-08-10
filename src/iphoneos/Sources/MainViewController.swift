@@ -191,7 +191,7 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
     }
     
     public func locationDidUpdated(status: Bool, mapEl: MapElement?, error: NSError?) -> Void {
-        print("UPD")
+        print(status)
     }
     
     public func authSucceed(token: String, animationDuration: Double) {
