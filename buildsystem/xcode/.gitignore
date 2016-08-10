@@ -1,15 +1,9 @@
-# General
-## protoc generated files
-*.pbrpc.{h,m}
-*.pbobjc.{h,m}
-
-# Build systems
-## CocoaPods
+# CocoaPods
 Podfile.lock
 Pods/
 
-## Xcode
-### generated
+# Xcode
+## generated
 build/
 DerivedData/
 .XcodeDerivedData/
@@ -19,7 +13,7 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 
-### settings
+## settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -30,6 +24,6 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-### other
+## other
 *.moved-aside
 *.xcuserstate
