@@ -190,20 +190,24 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
         }
     }
     
+    public func locationDidUpdated(status: Bool, mapEl: MapElement?, error: NSError?) -> Void {
+        print("UPD")
+    }
+    
     public func authSucceed(token: String, animationDuration: Double) {
         UIView.animateWithDuration(animationDuration) {
             self.bView?.effect = UIBlurEffect(style: .ExtraLight)
             self.bView?.alpha = 0
         }
         
-//        let service = AuthService(host: remoteHost)
-//        
-//        let request = LocationUpdateRequest()
-//        request.token = token
-//        request.lat = (manager?.location?.coordinate.latitude)!
-//        request.lon = (manager?.location?.coordinate.longitude)!
-//        
-//        service.updateLocationWithRequest(request, eventHandler: nil)
+        let service = MuService(host: remoteHost)
+        
+        let request = LocationUpdateRequest()
+        request.token = token
+        request.lat = (manager?.location?.coordinate.latitude)!
+        request.lon = (manager?.location?.coordinate.longitude)!
+        
+        service.updateLocationWithRequest(request, eventHandler: locationDidUpdated)
     }
 
 	public func authRequest(login lgn: String, pass: String) {
