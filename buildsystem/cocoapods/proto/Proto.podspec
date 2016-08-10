@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name     = 'RemoteTest'
+  s.name     = 'Proto'
   s.version  = '0.0.1'
   s.license  = 'New BSD'
   s.authors  = { 'gRPC contributors' => 'grpc-io@googlegroups.com' }
@@ -10,27 +10,24 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.1'
   s.osx.deployment_target = '10.9'
 
-  # Run protoc with the Objective-C and gRPC plugins to generate protocol messages and gRPC clients.
   s.dependency "!ProtoCompiler-gRPCPlugin", "~> 1.0.0-pre1"
 
-  repo_root = '../../../..'
-
   protoc = "/usr/local/bin/protoc"
-  well_known_types_dir = "#{repo_root}/third_party/protobuf/src"
   plugin = "/usr/local/bin/grpc_objective_c_plugin"
+  proto_dir = "../../../proto"
 
   s.prepare_command = <<-CMD
     #{protoc} \
         --plugin=protoc-gen-grpc=#{plugin} \
         --objc_out=. \
         --grpc_out=. \
-        -I . \
-        -I #{well_known_types_dir} \
-        proto/*/*.proto
+        --proto_path #{proto_dir}/ \
+        #{proto_dir}/**.proto
   CMD
 
   s.subspec 'Messages' do |ms|
-    ms.source_files = 'proto/*/*.pbobjc.{h,m}'
+    ms.source_files = '**.pbobjc.{h,m}'
+    ms.public_header_files = '**.pbobjc.h'
     ms.header_mappings_dir = '.'
     ms.requires_arc = false
     ms.dependency 'Protobuf'
@@ -41,7 +38,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Services' do |ss|
-    ss.source_files = 'proto/*/*.pbrpc.{h,m}'
+    ss.source_files = '**.pbrpc.m', '**.pbrpc.h'
+    ss.public_header_files = '**.pbrpc.h'
     ss.header_mappings_dir = '.'
     ss.requires_arc = true
     ss.dependency 'gRPC-ProtoRPC'

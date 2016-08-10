@@ -1,0 +1,24 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+install! 'cocoapods', :deterministic_uuids => false
+
+use_frameworks!
+
+target 'MeetU' do
+	pod 'Proto', :path => "../../cocoapods/proto"
+
+	pod 'Material'
+
+	pod '!ProtoCompiler'
+	pod '!ProtoCompiler-gRPCPlugin'
+
+	pod 'Protobuf'
+
+	pod 'BoringSSL'
+
+	pod 'gRPC'
+	pod 'gRPC-Core'
+	pod 'gRPC-RxLibrary'
+	pod 'gRPC-ProtoRPC'
+end

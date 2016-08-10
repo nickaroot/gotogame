@@ -3,28 +3,28 @@ syntax="proto3";
 package mu;
 
 // Auth
-import "request.AuthTokenRequest.proto";
-import "reply.AuthTokenReply.proto";
+import "AuthTokenRequest.proto";
+import "AuthTokenReply.proto";
 
 // Profile
-import "request.ProfileRequest.proto";
-import "model.UserProfile.proto";
+import "ProfileRequest.proto";
+import "UserProfile.proto";
 
 // Update location
-import "request.LocationUpdateRequest.proto";
-import "model.MapElement.proto";
+import "LocationUpdateRequest.proto";
+import "MapElement.proto";
 
 // Visibility
-import "request.VisibilityRequest.proto";
-import "reply.VisibilityReply.proto";
+import "VisibilityRequest.proto";
+import "VisibilityReply.proto";
 
 // Meet session
-import "request.MeetSessionRequest.proto";
-import "reply.MeetSessionReply.proto";
+import "MeetSessionRequest.proto";
+import "MeetSessionReply.proto";
 
 // User meet
-import "request.MeetUserRequest.proto";
-import "reply.MeetUserReply.proto";
+import "MeetUserRequest.proto";
+import "MeetUserReply.proto";
 
 service AuthService {
 	// Authorize
