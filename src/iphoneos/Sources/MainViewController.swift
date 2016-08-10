@@ -17,9 +17,9 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 	@IBOutlet
 	weak var visEfView: UIVisualEffectView?
 	@IBOutlet
-	weak var loginTextField: AwesomeTextField?
+	weak var loginTextField: AuthTextField?
 	@IBOutlet
-	weak var passwordTextField: AwesomeTextField?
+	weak var passwordTextField: AuthTextField?
 	@IBOutlet
 	weak var signView: AuthView?
 	@IBOutlet

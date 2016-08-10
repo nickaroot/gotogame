@@ -1,7 +1,7 @@
 import Swift
 import UIKit
 
-public class AwesomeTextField: UITextField {
+public class AuthTextField: UITextField {
 	override public func tintColorDidChange() {
 		self.textColor = self.tintColor
 	}
