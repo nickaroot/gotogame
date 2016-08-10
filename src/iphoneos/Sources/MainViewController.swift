@@ -21,7 +21,7 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 	@IBOutlet
 	weak var passwordTextField: AwesomeTextField?
 	@IBOutlet
-	weak var signView: AwesomeView?
+	weak var signView: AuthView?
 	@IBOutlet
 	weak var mapView: MKMapView?
 	@IBOutlet
@@ -32,10 +32,14 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBOutlet
     weak var mButton: FabButton!
     
+    public let remoteHost = "nickaroot.me:5001"
+    
 	public var manager: CLLocationManager?
 
 	public override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        GRPCCall.useInsecureConnectionsForHost(remoteHost)
 
 		self.manager = CLLocationManager()
 
@@ -67,17 +71,25 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 
 	@IBAction
 	public func mButtonTouchUp(sender: AnyObject) {
+        var clientsArray = [Client]()
+        
+        clientsArray.append(Client(
+            coordinate: (55.806304123305, 37.54148039039),
+            title: "Muhammad Solomon",
+            subtitle: "124 метра")
+        )
+        self.loadAnnotations(clientsArray)
 	}
 
 	public func mapViewDidFinishLoadingMap(mapView: MKMapView) {
-		var clientsArray = [Client]()
-
-		clientsArray.append(Client(
-			coordinate: (55.806304123305, 37.54148039039),
-			title: "Muhammad Solomon",
-			subtitle: "124 метра")
-		)
-		self.loadAnnotations(clientsArray)
+//		var clientsArray = [Client]()
+//
+//		clientsArray.append(Client(
+//			coordinate: (55.806304123305, 37.54148039039),
+//			title: "Muhammad Solomon",
+//			subtitle: "124 метра")
+//		)
+//		self.loadAnnotations(clientsArray)
 	}
 
 	public func mapView(
@@ -166,31 +178,65 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 		}
 
 	}
+    
+    public func errorAlertDissmised(action: UIAlertAction) -> Void {
+        switch action.title! {
+        case "Dismiss":
+            passwordTextField?.text = ""
+            loginTextField?.becomeFirstResponder()
+            break
+        default:
+            resignFirstResponder()
+        }
+    }
+    
+    public func authSucceed(token: String, animationDuration: Double) {
+        UIView.animateWithDuration(animationDuration) {
+            self.bView?.effect = UIBlurEffect(style: .ExtraLight)
+            self.bView?.alpha = 0
+        }
+        
+//        let service = AuthService(host: remoteHost)
+//        
+//        let request = LocationUpdateRequest()
+//        request.token = token
+//        request.lat = (manager?.location?.coordinate.latitude)!
+//        request.lon = (manager?.location?.coordinate.longitude)!
+//        
+//        service.updateLocationWithRequest(request, eventHandler: nil)
+    }
 
 	public func authRequest(login lgn: String, pass: String) {
-		let remoteHost = "nickaroot.me"
 
-		let request = AuthTokenRequest()
+        let request = AuthTokenRequest()
 		request.login = lgn
 		request.pass = pass
 
 //		let service = MuService(host: "")
 //		service.updateLocationWithRequest(<#T##request: LocationUpdateRequest##LocationUpdateRequest#>, eventHandler: <#T##(Bool, MapElement?, NSError?) -> Void#>)
-
-		let service = AuthService(host: remoteHost)
+        
+        let service = AuthService(host: remoteHost)
 		service.authorizeWithRequest(request) { response, error in
 			guard let response = response where error == nil else {
-				print("Request finished with error: \(error!)")
-				fatalError(#function) // FIXME: !!
+                var errMsg = ""
+				//fatalError(#function) // FIXME: !!
+                switch (error!.code) {
+                    case 2:
+                        errMsg = "Invalid Password"
+                        break
+                    default:
+                        errMsg = "Unknown Error \(error!.code)"
+                        break
+                }
+                
+                let alertController = UIAlertController(title: "Authentication Failed", message: errMsg, preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: self.errorAlertDissmised))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                return
 			}
-
-			UIView.animateWithDuration(0.5) {
-				self.bView?.effect = UIBlurEffect(style: .ExtraLight)
-				self.bView?.alpha = 0
-			}
-
-			let token = response.token
-			print("Authorized with token: \(token)")
+            
+            self.authSucceed(response.token, animationDuration: 0.5)
 		}
 	}
 

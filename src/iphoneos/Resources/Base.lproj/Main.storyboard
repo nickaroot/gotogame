@@ -73,7 +73,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-ah-wMw" customClass="AwesomeView" customModule="SwiftSample">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-ah-wMw" customClass="AuthView" customModule="MeetU" customModuleProvider="target">
                                                         <rect key="frame" x="200" y="271" width="200" height="58"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSN-sp-zN1" customClass="AwesomeTextField" customModule="MeetU" customModuleProvider="target">
@@ -153,14 +153,13 @@
                         <constraints>
                             <constraint firstItem="stX-sl-NjL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="9rp-gJ-bMy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ilh-uS-E4s" secondAttribute="bottom" id="Fjd-lL-ijG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="stX-sl-NjL" secondAttribute="bottom" id="I6o-M8-lx2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4aZ-Sl-gms" secondAttribute="bottom" constant="20" id="LPb-qs-AOP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="stX-sl-NjL" secondAttribute="trailing" constant="-20" id="NIe-kL-T93"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ilh-uS-E4s" secondAttribute="trailing" constant="-20" id="QA4-OF-eHJ"/>
                             <constraint firstItem="stX-sl-NjL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tkh-BS-gEc"/>
                             <constraint firstItem="stX-sl-NjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Zhy-n8-0ZL"/>
                             <constraint firstItem="Ilh-uS-E4s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bff-nv-myv"/>
                             <constraint firstItem="4aZ-Sl-gms" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cWq-M1-mU3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="stX-sl-NjL" secondAttribute="trailing" constant="-20" id="pwN-eX-87i"/>
                             <constraint firstItem="Ilh-uS-E4s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zIZ-pS-bss"/>
                         </constraints>
                     </view>
@@ -220,7 +219,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="fUt-mI-Auf"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Липкин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPB-DI-ihM">
@@ -230,7 +229,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="dqE-Li-8Gr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9m-Pi-PDX" customClass="RaisedButton" customModule="Material">

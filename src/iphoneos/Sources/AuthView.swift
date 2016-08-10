@@ -2,7 +2,7 @@ import Swift
 import UIKit
 
 @IBDesignable
-public class AwesomeView: UIView {
+public class AuthView: UIView {
 	@IBInspectable
 	var cornerRadius: CGFloat {
 		get {

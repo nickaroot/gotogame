@@ -19,6 +19,11 @@ extension MapElement: MKAnnotation {
 	}
 
 	public var subtitle: String? {
-		return nil // FIXME: add subtitle? possibly, distance to user?
+//        let testCoords = CLLocationCoordinate2DMake(drand48(), drand48())
+//        let location1 = CLLocation.init(coordinate: self.coordinate, altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: NSDate(timeIntervalSinceReferenceDate: 0))
+//        let location2 = CLLocation.init(coordinate: testCoords, altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: NSDate(timeIntervalSinceReferenceDate: 0))
+//        let distance = String(location1.distanceFromLocation(location2))
+//        return distance
+        return nil // FIXME: Setup distance
 	}
 }
