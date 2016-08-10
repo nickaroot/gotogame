@@ -29,6 +29,9 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 	@IBOutlet
 	weak var baseConstraint: NSLayoutConstraint?
 
+    @IBOutlet
+    weak var mButton: FabButton!
+    
 	public var manager: CLLocationManager?
 
 	public override func viewDidLoad() {
@@ -197,11 +200,16 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 			return true
 		}
 		if textField == passwordTextField {
-			defer {
-				authRequest(
-					login: self.loginTextField?.text ?? "",
-					pass: self.passwordTextField?.text ?? "")
-			}
+//			defer {
+//				authRequest(
+//					login: self.loginTextField?.text ?? "",
+//					pass: self.passwordTextField?.text ?? "")
+//			}
+            
+            UIView.animateWithDuration(0.5) {
+                self.bView?.effect = UIBlurEffect(style: .ExtraLight)
+                self.bView?.alpha = 0
+            }
 
 			textField.resignFirstResponder()
 			return false
@@ -237,10 +245,10 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 	}
 
 	func prepareMButton() {
-//		let img = MaterialIcon.cm.edit
-//		mButton.setImage(img, forState: .Normal)
-//		mButton.setImage(img, forState: .Highlighted)
-//		mButton.tintColor = MaterialColor.white
+		let img = MaterialIcon.cm.edit
+		mButton.setImage(img, forState: .Normal)
+		mButton.setImage(img, forState: .Highlighted)
+		mButton.tintColor = MaterialColor.white
 	}
 
 	func animate(usingKeyboardNotification notification: NSNotification) {
