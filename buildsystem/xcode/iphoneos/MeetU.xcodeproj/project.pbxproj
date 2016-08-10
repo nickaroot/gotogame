@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		000B53831D5732D20062ED17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B53821D5732D20062ED17 /* ProfileViewController.swift */; };
-		0022C3051D5670EA006FC9BE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0022C3041D5670EA006FC9BE /* MapKit.framework */; };
 		09181919E97156173104D754 /* Pods_MeetU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF3316DE89050A00D3AC69A /* Pods_MeetU.framework */; };
 		633BFFC81B950B210007E424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BFFC71B950B210007E424 /* AppDelegate.swift */; };
 		633BFFCA1B950B210007E424 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BFFC91B950B210007E424 /* MainViewController.swift */; };
@@ -35,11 +34,7 @@
 
 /* Begin PBXFileReference section */
 		000B53821D5732D20062ED17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0022C3041D5670EA006FC9BE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		00C6B7C81D5A4D5E006FD918 /* RemoteTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RemoteTest.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftSample-gwyactrvdfqvvyfwhxaywkzjhvaa/Build/Products/Debug-iphoneos/RemoteTest/RemoteTest.framework"; sourceTree = "<group>"; };
-		00C6B7CA1D5A4D81006FD918 /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Protobuf.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftSample-gwyactrvdfqvvyfwhxaywkzjhvaa/Build/Products/Debug-iphoneos/Protobuf/Protobuf.framework"; sourceTree = "<group>"; };
 		36458968CCEA95746F5A7486 /* Pods-MeetU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetU.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetU/Pods-MeetU.release.xcconfig"; sourceTree = "<group>"; };
-		59BF0EC6657769E08F2BE6E8 /* Pods_SwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		633BFFC21B950B210007E424 /* MeetU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633BFFC61B950B210007E424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633BFFC71B950B210007E424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +47,6 @@
 		77018BF01D5AA85100B64502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9437DE746FB6433AE12E2EF2 /* Pods-MeetU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetU/Pods-MeetU.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF3316DE89050A00D3AC69A /* Pods_MeetU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7E614A494D89D01BB395761 /* Pods-SwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSample/Pods-SwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
-		C314E3E246AF23AC29B38FCF /* Pods-SwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSample/Pods-SwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0022C3051D5670EA006FC9BE /* MapKit.framework in Frameworks */,
 				09181919E97156173104D754 /* Pods_MeetU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,8 +64,6 @@
 		31F283C976AE97586C17CCD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7E614A494D89D01BB395761 /* Pods-SwiftSample.debug.xcconfig */,
-				C314E3E246AF23AC29B38FCF /* Pods-SwiftSample.release.xcconfig */,
 				9437DE746FB6433AE12E2EF2 /* Pods-MeetU.debug.xcconfig */,
 				36458968CCEA95746F5A7486 /* Pods-MeetU.release.xcconfig */,
 			);
@@ -136,10 +126,6 @@
 		9D63A7F6423989BA306810CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00C6B7CA1D5A4D81006FD918 /* Protobuf.framework */,
-				00C6B7C81D5A4D5E006FD918 /* RemoteTest.framework */,
-				0022C3041D5670EA006FC9BE /* MapKit.framework */,
-				59BF0EC6657769E08F2BE6E8 /* Pods_SwiftSample.framework */,
 				9BF3316DE89050A00D3AC69A /* Pods_MeetU.framework */,
 			);
 			name = Frameworks;
