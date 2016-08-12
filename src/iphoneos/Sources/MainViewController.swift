@@ -202,12 +202,14 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         let service = MuService(host: remoteHost)
         
-        let request = LocationUpdateRequest()
-        request.token = token
-        request.lat = (manager?.location?.coordinate.latitude)!
-        request.lon = (manager?.location?.coordinate.longitude)!
+        print(token)
         
-        service.updateLocationWithRequest(request, eventHandler: locationDidUpdated)
+//        let request = LocationUpdateRequest()
+//        request.token = token
+//        request.lat = (manager?.location?.coordinate.latitude)!
+//        request.lon = (manager?.location?.coordinate.longitude)!
+//        
+//        service.updateLocationWithRequest(request, eventHandler: locationDidUpdated)
     }
 
 	public func authRequest(login lgn: String, pass: String) {
@@ -250,16 +252,11 @@ public class MainViewController: UIViewController, MKMapViewDelegate, CLLocation
 			return true
 		}
 		if textField == passwordTextField {
-//			defer {
-//				authRequest(
-//					login: self.loginTextField?.text ?? "",
-//					pass: self.passwordTextField?.text ?? "")
-//			}
-            
-            UIView.animateWithDuration(0.5) {
-                self.bView?.effect = UIBlurEffect(style: .ExtraLight)
-                self.bView?.alpha = 0
-            }
+			defer {
+				authRequest(
+					login: self.loginTextField?.text ?? "",
+					pass: self.passwordTextField?.text ?? "")
+			}
 
 			textField.resignFirstResponder()
 			return false
